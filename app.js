@@ -1,8 +1,6 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-//const indexRouter = require('./routers/homeRouter');
-//const newMessageRouter = require('./routers/newMessageRouter');
 const { router, newMessage } = require('./routers/router');
 
 app.use(express.static(path.join(__dirname, 'public')));
