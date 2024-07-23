@@ -1,8 +1,22 @@
 const express = require('express');
-const homeRouter = express.Router();
+const indexRouter = express.Router();
 
-homeRouter.get('/', (req, res)=>{
-  res.status(200).send('this is home');
-})
+const messages = [
+  {
+    text: 'Hi there!',
+    user: 'Amando',
+    added: new Date(),
+  },
+  {
+    text: 'Hello World!',
+    user: 'Charles',
+    added: new Date(),
+  },
+];
 
-module.exports = homeRouter;
+
+indexRouter.get('/', (req, res) => {
+  res.render('index', { title: 'Mini message App', messages: messages });
+});
+
+module.exports = indexRouter;

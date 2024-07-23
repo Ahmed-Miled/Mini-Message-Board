@@ -1,0 +1,25 @@
+<!--loop throw messages-->
+<html>
+
+<head>
+  <title>Home Page</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+  <h1><%= title %></h1>
+  <% messages.forEach((message)=>{ %>
+    <div class="user">
+      <p>Name : <%= message.user %>
+      </p>
+      <p>Message : <%= message.text %>
+      </p>
+      <p>date : <%= message.added %>
+      </p>
+
+    </div>
+    <% }) %>
+
+</body>
+
+</html>
