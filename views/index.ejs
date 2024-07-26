@@ -14,21 +14,27 @@
     <div class="title">
       Mini <span style="color: #007bff;">message</span> App
     </div>
-    <div class="btn">
-      <a href="/new">New message </a>
+    <div class="btns">
+      <div class="btn">
+        <a href="/new">New message </a>
+      </div>
+      <div class="btn">
+        <a href="/delete">Delete</a>
+      </div>
     </div>
+
   </div>
   <div class="container">
     <% messages.forEach((message)=>{ %>
       <div class="user">
         <p><b>Name:</b>
-          <%= message.user %>
+          <%= message.username %>
         </p>
         <p><b>Message:</b>
           <%= message.text %>
         </p>
         <p><b>date:</b>
-          <%= message.added %>
+          <%= message.date %>
         </p>
 
       </div>
