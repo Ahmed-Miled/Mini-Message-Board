@@ -1,7 +1,7 @@
 const { Client } = require('pg');
 
 const date = new Date();
-const formattedDate = date.toISOString(); // Use ISO format for dates
+const formattedDate = date.toISOString().slice(0, 10); // Use ISO format for dates
 
 const createTableSql = `
   CREATE TABLE IF NOT EXISTS messages(
