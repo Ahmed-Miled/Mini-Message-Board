@@ -9,10 +9,10 @@ const pool = new Pool({
   port: process.env.DB_PORT
 })
 */
+// Use DATABASE_URL for cloud deployment, fallback to individual variables for local development
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL || `postgresql://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_DATABASE}`,
-  ssl: process.env.DATABASE_URL ? { rejectUnauthorized: false } : false,
+  connectionString: process.env.DATABASE_URL, // Use the database URL directly
+  ssl: process.env.DATABASE_URL ? { rejectUnauthorized: false } : false, // Only enable SSL for cloud-based DB
 });
-
 
 module.exports = pool;
