@@ -20,13 +20,13 @@ app.use((req, res, next) => {
 });
 
 app.use((err, req, res, next) => {
-  console.error('Error details:', err); 
+  console.error('Error details:', err.stack); 
   res
     .status(500)
-    .send('Sorry, something went wrong on our end. Please try again later.');
+    .send('Sorry, something went wrong on my end. Please try again later.');
 });
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}/`);
 });
